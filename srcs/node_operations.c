@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 创建新节点 */
 t_node	*create_node(int value)
 {
 	t_node	*new_node;
@@ -19,7 +18,6 @@ t_node	*create_node(int value)
 	return (new_node);
 }
 
-/* 将节点添加到栈底 */
 void	add_node_bottom(t_stack *stack, t_node *new_node)
 {
 	t_node	*last;
@@ -39,7 +37,6 @@ void	add_node_bottom(t_stack *stack, t_node *new_node)
 	stack->size++;
 }
 
-/* 将节点添加到栈顶 */
 void	add_node_top(t_stack *stack, t_node *new_node)
 {
 	if (!stack->head)
@@ -55,7 +52,6 @@ void	add_node_top(t_stack *stack, t_node *new_node)
 	stack->size++;
 }
 
-/* 从栈顶弹出节点 */
 t_node	*pop_node_top(t_stack *stack)
 {
 	t_node	*top;
@@ -75,7 +71,6 @@ t_node	*pop_node_top(t_stack *stack)
 	return (top);
 }
 
-/* 检查栈是否已排序 */
 int	is_sorted(t_stack *stack)
 {
 	t_node	*current;

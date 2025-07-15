@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 获取栈的最高值 */
 static int	get_highest(t_stack *stack)
 {
 	int		highest;
@@ -19,7 +18,6 @@ static int	get_highest(t_stack *stack)
 	return (highest);
 }
 
-/* 仅包含3个元素的栈排序 */
 void	sort_three(t_stack *stack_a)
 {
 	int	highest;

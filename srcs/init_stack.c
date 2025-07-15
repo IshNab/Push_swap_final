@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 初始化栈 */
 int	init_stack(t_stack **stack)
 {
 	*stack = (t_stack *)malloc(sizeof(t_stack));
@@ -11,7 +10,6 @@ int	init_stack(t_stack **stack)
 	return (1);
 }
 
-/* 检查栈中是否有重复数字 */
 int	has_duplicate(t_stack *stack, int num)
 {
 	t_node	*current;
@@ -26,7 +24,6 @@ int	has_duplicate(t_stack *stack, int num)
 	return (0);
 }
 
-/* 创建节点并添加到栈中 */
 int	add_to_stack(t_stack *stack, int value)
 {
 	t_node	*new_node;
@@ -38,7 +35,6 @@ int	add_to_stack(t_stack *stack, int value)
 	return (1);
 }
 
-/* 解析命令行参数并填充栈 */
 int	parse_args(int argc, char **argv, t_stack *stack_a)
 {
 	int		i;
@@ -61,7 +57,6 @@ int	parse_args(int argc, char **argv, t_stack *stack_a)
 	return (1);
 }
 
-/* 为栈中的每个元素分配索引 */
 void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_node	*current;

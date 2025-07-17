@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 交换栈顶的两个元素 */
 static void	swap(t_stack *stack)
 {
 	t_node	*first;
@@ -19,7 +18,6 @@ static void	swap(t_stack *stack)
 	stack->head = second;
 }
 
-/* sa操作：交换a栈顶两个元素 */
 void	sa(t_stack *stack_a, int print)
 {
 	swap(stack_a);
@@ -27,7 +25,6 @@ void	sa(t_stack *stack_a, int print)
 		write(1, "sa\n", 3);
 }
 
-/* sb操作：交换b栈顶两个元素 */
 void	sb(t_stack *stack_b, int print)
 {
 	swap(stack_b);
@@ -35,7 +32,6 @@ void	sb(t_stack *stack_b, int print)
 		write(1, "sb\n", 3);
 }
 
-/* ss操作：同时执行sa和sb */
 void	ss(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	swap(stack_a);

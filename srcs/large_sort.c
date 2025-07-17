@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 将最小元素移到栈顶 */
 static void	shift_stack(t_stack *stack_a)
 {
 	int	min_pos;
@@ -26,7 +25,6 @@ static void	shift_stack(t_stack *stack_a)
 	}
 }
 
-/* 将元素推送到栈B并保留3个元素在栈A */
 static void	push_all_but_three(t_stack *stack_a, t_stack *stack_b)
 {
 	int	stack_size;
@@ -51,7 +49,6 @@ static void	push_all_but_three(t_stack *stack_a, t_stack *stack_b)
 		pb(stack_a, stack_b, 1);
 }
 
-/* 主要排序函数，用于大规模数据 */
 void	sort_large(t_stack *stack_a, t_stack *stack_b)
 {
 	push_all_but_three(stack_a, stack_b);

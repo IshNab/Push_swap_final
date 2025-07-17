@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 检查字符串是否为有效数字 */
 int	is_number(char *str)
 {
 	int	i;
@@ -25,7 +24,6 @@ int	is_number(char *str)
 	return (is_digit_found);
 }
 
-/* 检查溢出 */
 static long	check_overflow(long result, char digit, int sign)
 {
 	if (result > LONG_MAX / 10
@@ -39,7 +37,6 @@ static long	check_overflow(long result, char digit, int sign)
 	return (result * 10 + (digit - '0'));
 }
 
-/* 将字符串转换为长整型 */
 long	atol(const char *str)
 {
 	long	result;
@@ -69,7 +66,6 @@ long	atol(const char *str)
 	return (result * sign);
 }
 
-/* 整数绝对值函数 */
 int	abs(int n)
 {
 	if (n < 0)

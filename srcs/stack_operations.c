@@ -1,12 +1,10 @@
 #include "push_swap.h"
 
-/* 获取栈大小 */
 int	get_stack_size(t_stack *stack)
 {
 	return (stack->size);
 }
 
-/* 获取最小索引元素的位置 */
 int	get_min_index_position(t_stack *stack)
 {
 	t_node	*current;
@@ -30,7 +28,6 @@ int	get_min_index_position(t_stack *stack)
 	return (min_pos);
 }
 
-/* 释放栈内存 */
 void	free_stack(t_stack *stack)
 {
 	t_node	*current;
@@ -48,7 +45,6 @@ void	free_stack(t_stack *stack)
 	free(stack);
 }
 
-/* 获取最大索引元素的位置 */
 int	get_max_index_position(t_stack *stack)
 {
 	t_node	*current;
@@ -72,7 +68,6 @@ int	get_max_index_position(t_stack *stack)
 	return (max_pos);
 }
 
-/* 错误处理 */
 void	exit_error(t_stack *stack_a, t_stack *stack_b)
 {
 	if (stack_a)

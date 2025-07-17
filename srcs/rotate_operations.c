@@ -1,6 +1,5 @@
 #include "push_swap.h"
 
-/* 旋转栈：将栈顶元素移到栈底 */
 static void	rotate(t_stack *stack)
 {
 	t_node	*first;
@@ -19,7 +18,6 @@ static void	rotate(t_stack *stack)
 	last->next = first;
 }
 
-/* ra操作：旋转a栈 */
 void	ra(t_stack *stack_a, int print)
 {
 	rotate(stack_a);
@@ -27,7 +25,6 @@ void	ra(t_stack *stack_a, int print)
 		write(1, "ra\n", 3);
 }
 
-/* rb操作：旋转b栈 */
 void	rb(t_stack *stack_b, int print)
 {
 	rotate(stack_b);
@@ -35,7 +32,6 @@ void	rb(t_stack *stack_b, int print)
 		write(1, "rb\n", 3);
 }
 
-/* rr操作：同时旋转a栈和b栈 */
 void	rr(t_stack *stack_a, t_stack *stack_b, int print)
 {
 	rotate(stack_a);

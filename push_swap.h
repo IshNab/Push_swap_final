@@ -25,7 +25,7 @@ typedef struct s_stack
 
 int		init_stack(t_stack **stack);
 int		parse_args(int argc, char **argv, t_stack *stack_a);
-void	assign_index(t_stack *stack_a, int stack_size);
+void	give_index(t_stack *stack_a, int stack_size);
 
 void	sa(t_stack *stack_a, int print);
 void	sb(t_stack *stack_b, int print);
@@ -62,17 +62,17 @@ void	get_positions(t_stack *stack);
 
 void	exit_error(t_stack *stack_a, t_stack *stack_b);
 int		is_number(char *str);
-int		has_duplicate(t_stack *stack, int num);
+int		is_duplicate(t_stack *stack, int num);
 
 long	atol(const char *str);
 
-int		is_valid_int(const char *str);
+int		check_int_valid(const char *str);
 void	free_split_result(char **result, int count);
 char	**split_string(const char *str, const char *delim, int *count);
 
 int		parse_and_fill_stack(int argc, char **argv, t_stack *stack_a);
 char	**handle_split_error(char *s, char **result, int spaces);
-char	**add_token_to_result(char **result, char *token, int *spaces);
+char	**add_item_to_result(char **result, char *item, int *spaces);
 int		init_split(const char *str, const char *delim,
 			char **s, char ***result);
 

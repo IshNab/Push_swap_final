@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include <string.h>
 
-int	is_valid_int(const char *str)
+int	check_int_valid(const char *str)
 {
 	long	num;
 	int		i;
@@ -40,24 +40,24 @@ void	free_split_result(char **result, int count)
 char	**split_string(const char *str, const char *delim, int *count)
 {
 	char	*s;
-	char	*token;
+	char	*item;
 	char	**result;
 	int		spaces;
 
 	if (!count || !init_split(str, delim, &s, &result))
 		return (NULL);
 	spaces = 0;
-	token = strtok(s, delim);
-	while (token)
+	item = strtok(s, delim);
+	while (item)
 	{
-		while (*token && *token == ' ')
-			token++;
-		if (!*token)
+		while (*item && *item == ' ')
+			item++;
+		if (!*item)
 			break ;
-		result = add_token_to_result(result, token, &spaces);
+		result = add_item_to_result(result, item, &spaces);
 		if (!result)
 			return (handle_split_error(s, result, spaces));
-		token = strtok(NULL, delim);
+		item = strtok(NULL, delim);
 	}
 	*count = spaces;
 	free(s);

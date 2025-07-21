@@ -10,12 +10,12 @@ char	**handle_split_error(char *s, char **result, int spaces)
 	return (NULL);
 }
 
-char	**add_token_to_result(char **result, char *token, int *spaces)
+char	**add_item_to_result(char **result, char *item, int *spaces)
 {
 	result = realloc(result, sizeof(char *) * (*spaces + 1));
 	if (!result)
 		return (NULL);
-	result[*spaces] = strdup(token);
+	result[*spaces] = strdup(item);
 	if (!result[*spaces])
 		return (NULL);
 	(*spaces)++;

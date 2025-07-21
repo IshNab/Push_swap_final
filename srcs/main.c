@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	stack_size = get_stack_size(stack_a);
-	assign_index(stack_a, stack_size);
+	give_index(stack_a, stack_size);
 	if (!is_sorted(stack_a))
 		do_sorting(stack_a, stack_b, stack_size);
 	free_stack(stack_a);

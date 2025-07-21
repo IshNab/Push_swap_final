@@ -41,7 +41,7 @@ t_node	*find_cheapest_node(t_stack *stack_b)
 	return (cheapest_node);
 }
 
-void	do_combined_rotations(t_stack *stack_a, t_stack *stack_b,
+void	do_both_rotations(t_stack *stack_a, t_stack *stack_b,
 			int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
@@ -69,7 +69,7 @@ void	execute_cheapest_move(t_stack *stack_a, t_stack *stack_b)
 	{
 		cheapest_cost_a = cheapest_node->cost_a;
 		cheapest_cost_b = cheapest_node->cost_b;
-		do_combined_rotations(stack_a, stack_b,
+		do_both_rotations(stack_a, stack_b,
 			&cheapest_cost_a, &cheapest_cost_b);
 		do_remaining_rotations(stack_a, &cheapest_cost_a, 'a');
 		do_remaining_rotations(stack_b, &cheapest_cost_b, 'b');

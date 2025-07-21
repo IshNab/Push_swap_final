@@ -1,21 +1,21 @@
 #include "push_swap.h"
 
-static int	process_numbers(char **numbers, int count,
-		t_stack *stack_a, int *has_numbers)
+static int	filter_numbers(char **numbers, int count,
+		t_stack *stack_a, int *has_nbrs)
 {
 	int	j;
 
 	j = 0;
 	while (j < count)
 	{
-		if (!is_valid_int(numbers[j])
-			|| has_duplicate(stack_a, atol(numbers[j])))
+		if (!check_int_valid(numbers[j])
+			|| is_duplicate(stack_a, atol(numbers[j])))
 		{
 			free_split_result(numbers, count);
 			return (0);
 		}
 		add_node_bottom(stack_a, create_node(atol(numbers[j])));
-		*has_numbers = 1;
+		*has_nbrs = 1;
 		j++;
 	}
 	return (1);
@@ -26,10 +26,10 @@ int	parse_and_fill_stack(int argc, char **argv, t_stack *stack_a)
 	int		i;
 	int		count;
 	char	**numbers;
-	int		has_numbers;
+	int		has_nbrs;
 
 	i = 1;
-	has_numbers = 0;
+	has_nbrs = 0;
 	while (i < argc)
 	{
 		if (!argv[i][0])
@@ -37,10 +37,10 @@ int	parse_and_fill_stack(int argc, char **argv, t_stack *stack_a)
 		numbers = split_string(argv[i], " ", &count);
 		if (!numbers || count == 0)
 			return (0);
-		if (!process_numbers(numbers, count, stack_a, &has_numbers))
+		if (!filter_numbers(numbers, count, stack_a, &has_nbrs))
 			return (0);
 		free_split_result(numbers, count);
 		i++;
 	}
-	return (has_numbers);
+	return (has_nbrs);
 }

@@ -25,7 +25,7 @@ static void	shift_stack(t_stack *stack_a)
 	}
 }
 
-static void	push_all_but_three(t_stack *stack_a, t_stack *stack_b)
+static void	pab_three(t_stack *stack_a, t_stack *stack_b)
 {
 	int	stack_size;
 	int	pushed;
@@ -51,7 +51,7 @@ static void	push_all_but_three(t_stack *stack_a, t_stack *stack_b)
 
 void	sort_large(t_stack *stack_a, t_stack *stack_b)
 {
-	push_all_but_three(stack_a, stack_b);
+	pab_three(stack_a, stack_b);
 	sort_three(stack_a);
 	while (stack_b->size > 0)
 	{

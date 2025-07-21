@@ -10,7 +10,7 @@ int	init_stack(t_stack **stack)
 	return (1);
 }
 
-int	has_duplicate(t_stack *stack, int num)
+int	is_duplicate(t_stack *stack, int num)
 {
 	t_node	*current;
 
@@ -24,11 +24,11 @@ int	has_duplicate(t_stack *stack, int num)
 	return (0);
 }
 
-int	add_to_stack(t_stack *stack, int value)
+int	add_to_stack(t_stack *stack, int digit)
 {
 	t_node	*new_node;
 
-	new_node = create_node(value);
+	new_node = create_node(digit);
 	if (!new_node)
 		return (0);
 	add_node_bottom(stack, new_node);
@@ -57,7 +57,7 @@ int	parse_args(int argc, char **argv, t_stack *stack_a)
 	return (1);
 }
 
-void	assign_index(t_stack *stack_a, int stack_size)
+void	give_index(t_stack *stack_a, int stack_size)
 {
 	t_node	*current;
 	t_node	*highest;
